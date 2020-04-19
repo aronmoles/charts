@@ -3,12 +3,12 @@ entries:
   deploy480:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-04-19T12:19:36.66659+02:00"
+    created: "2020-04-19T12:42:18.504194+02:00"
     description: A Helm chart for Kubernetes
-    digest: 17ee78f55c81e7b0c9bc2292d2cfd855c42bfcc6f2e737914eddfe0ff8a41418
+    digest: cae2f9f3cb70fe7b6957b1238c86d1211cbd82d72f2d0901122e0c5c1ae62559
     name: deploy480
     type: application
     urls:
-    - deploy480-0.1.1.tgz
-    version: 0.1.1
-generated: "2020-04-19T12:19:36.658843+02:00"
+    - deploy480-0.1.2.tgz
+    version: 0.1.2
+generated: "2020-04-19T12:42:18.499734+02:00"
