@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "deploy.react.fullname" . }}
+  labels:
+    {{- include "deploy.react.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.react.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "deploy.react.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "deploy.react.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.react.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "deploy.react.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.react.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.react.securityContext | nindent 12 }}
+          {{- if .Values.react.image.tag }}
+          image: "{{ .Values.react.image.repository }}:{{ .Values.react.image.tag }}"
+          {{- else }}
+          image: "{{ .Values.react.image.repository }}:{{ .Chart.AppVersion }}"
+          {{- end }}
+          imagePullPolicy: {{ .Values.react.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.react.resources | nindent 12 }}
+      {{- with .Values.react.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.react.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.react.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
