@@ -73,8 +73,8 @@ react:
   replicaCount: 1
 
   image:
-    repository: registry.local/cicd-react-pre
-    tag: 0.1.0-3-gc8aade0
+    repository: node
+    tag: 12-alpine3.9
     pullPolicy: IfNotPresent
 
   imagePullSecrets: []

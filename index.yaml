@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  deploy480:
+  react-node:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-04-19T12:19:36.66659+02:00"
+    created: "2020-05-01T20:47:34.88957+02:00"
     description: A Helm chart for Kubernetes
-    digest: 17ee78f55c81e7b0c9bc2292d2cfd855c42bfcc6f2e737914eddfe0ff8a41418
-    name: deploy480
+    digest: 99f7d99c9be2bfa33bdafd498f4d3a4ba7678e43901ebbbdf9f1b592234a1165
+    name: react-node
     type: application
     urls:
-    - deploy480-0.1.1.tgz
-    version: 0.1.1
-generated: "2020-04-19T12:19:36.658843+02:00"
+    - react-node-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-05-01T20:47:34.885949+02:00"
