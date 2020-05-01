@@ -33,15 +33,6 @@ app.kubernetes.io/name: {{ include "deploy.node.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
-{{- define "deploy.node.serviceAccountName" -}}
-{{- if .Values.node.serviceAccount.create -}}
-    {{ default (include "deploy.node.fullname" .) .Values.node.serviceAccount.name }}
-{{- else -}}
-    {{ default "default" .Values.node.serviceAccount.name }}
-{{- end -}}
-{{- end -}}
-
-
 
 
 
@@ -72,12 +63,4 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- define "deploy.react.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "deploy.react.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end -}}
-
-{{- define "deploy.react.serviceAccountName" -}}
-{{- if .Values.react.serviceAccount.create -}}
-    {{ default (include "deploy.react.fullname" .) .Values.react.serviceAccount.name }}
-{{- else -}}
-    {{ default "default" .Values.react.serviceAccount.name }}
-{{- end -}}
 {{- end -}}
