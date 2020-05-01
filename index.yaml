@@ -3,12 +3,22 @@ entries:
   react-node:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-05-01T20:47:34.88957+02:00"
+    created: "2020-05-01T21:52:59.669378+02:00"
     description: A Helm chart for Kubernetes
-    digest: 99f7d99c9be2bfa33bdafd498f4d3a4ba7678e43901ebbbdf9f1b592234a1165
+    digest: cffb39e3d34791c26b149566814a5b6d7464a3bb1086d489a412a659108c8556
+    name: react-node
+    type: application
+    urls:
+    - react-node-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-05-01T21:52:59.668566+02:00"
+    description: A Helm chart for Kubernetes
+    digest: d2557ddc1a30cd462ef685869b6d5cf52daf0bebdb3b6526f302bd7b97e58d96
     name: react-node
     type: application
     urls:
     - react-node-0.1.0.tgz
     version: 0.1.0
-generated: "2020-05-01T20:47:34.885949+02:00"
+generated: "2020-05-01T21:52:59.667157+02:00"
